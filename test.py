@@ -1,15 +1,16 @@
-from PIL import Image
 import numpy as np
+from PIL import Image # pip install Pillow
+
+# img = np.asarray(Image.open('orig.jpg').convert('RGB'), dtype=uint16)
 
 image = Image.open('orig.jpg')
-im2arr = np.array(image)
-# print(im2arr)
-# arr2im = Image.fromarray(im2arr)
-# image.show()
-for i in im2arr:
-    for j in i:
-        for k in j:
-            print(type(k))
-            im2arr[i][j][k] = int(bin(k)[2:])
-            print(k)
-print(im2arr)
+# img = np.array(image, dtype=uint8)
+img = np.asarray(image, dtype='uint64')
+
+
+for i in range(len(img)):
+    for j in range(len(img[i])):
+        for k in range(len(img[i][j])):
+            img[i][j][k] = bin(img[i][j][k])[2:]
+            print(img[i][j][k])
+
