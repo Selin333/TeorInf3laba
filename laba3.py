@@ -365,3 +365,27 @@ def tri():
     plt.imshow(Inuzh)
     plt.axis("off")
     plt.show()
+window = Tk()
+window.title("Кодим фоточки")
+window.geometry("200x150+500+100")
+window.resizable(width=False, height=False)
+
+btn = Button(text="Выбрать",command=call)
+btn.pack()
+btn.place(x=70, y=120)
+
+btn1 = Button(text="Оригинал",command=pervoe)
+btn1.pack()
+btn1.place(x=70, y=90)
+
+btn2 = Button(text="Зашумить",command=vtoroe)
+btn2.pack()
+btn2.place(x=70, y=60)
+
+btn3 = Button(text="код/декод",command=tri)
+btn3.pack()
+btn3.place(x=70, y=30)
+
+
+
+window.mainloop()
